@@ -20,7 +20,5 @@ backup
 .vs
 *.suo
 *.user
-*.csproj.user
-*.vbproj.user
 ipch
 *sdf
