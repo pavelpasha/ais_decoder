@@ -43,9 +43,6 @@ void test() {
 	assert(msg5_get_dte_flag(message) == false);
 	assert(msg5_get_draught(message) == 0);
 
-
-	printf("All the tests passed\n");
-
 }
 
 
@@ -56,14 +53,13 @@ void bench() {
 	using std::chrono::duration_cast;
 	using std::chrono::duration;
 	using std::chrono::milliseconds;
-	//std::string ais_char_bytes = "539S:k40000000c33";
+
 	auto t1 = high_resolution_clock::now();
 	for (int i = 0; i < 10000000; ++i)
 		test();
 
 	auto t2 = high_resolution_clock::now();
 
-	/* Getting number of milliseconds as an integer. */
 	auto ms_int = duration_cast<milliseconds>(t2 - t1);
 
 	std::cout << ms_int.count() << "ms\n";
