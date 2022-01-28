@@ -18,8 +18,8 @@ std::cout << "message mmsi " << msg_get_mmsi(bitstring) << endl;
 switch (msg_get_type(bitstring))
 	{
 	case 1:
-  case 2:
-  case 3:
+  	case 2:
+  	case 3:
 		std::cout << "message latitude " << msg123_get_latitude(bitstring) << endl;
 		std::cout << "message longitude " << msg123_get_longitude(bitstring) << endl;
 		std::cout << "message cog " << msg123_get_cog(bitstring) << endl;
