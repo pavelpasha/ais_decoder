@@ -40,7 +40,6 @@ switch (msg_get_type(bitstring))
 		std::cout << "message dte " << msg5_get_dte_flag(bitstring) << endl;
 		break;
 	default:
-		std::cout << "unsupported message type \n";
 		break;
 	}
 ```
