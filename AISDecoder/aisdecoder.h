@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Pavel Saenko <pasha03.92@mail.ru>
+ * Copyright (c) 2022 Pavel Saenko <pasha03.92@mail.ru>
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -50,7 +50,7 @@ namespace aislib {
 		inline bool decode(std::string_view ais_payload) { return m_bitstring.decode(ais_payload); }
 		void setOptions(bool check_crc, bool parse_meta);
 		inline void setCallback(const std::function<void(AISDecoder*)>& callback) { m_callback = callback; }
-		inline const AISBitstring& get_bitstring() const { return m_bitstring; }
+		inline const AISBitstring& getBitstring() const { return m_bitstring; }
 		// Returns true if last decoded message was "AIVDO" - i.e. ownship (if parse_meta enabled)
 		inline bool isOwnship() const { return is_ownship; }
 		// Returns talker id of last decoded message, for example "AI" (if parse_meta enabled)

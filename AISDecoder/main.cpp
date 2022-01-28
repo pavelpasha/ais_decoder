@@ -28,7 +28,7 @@ void test() {
 	result = dec.parseSentence("!AIVDM,2,2,0,B,00000000000,2*27");
 	assert(result == AIS_PARSED);
 
-	const AISBitstring& message = dec.get_bitstring();
+	const AISBitstring& message = dec.getBitstring();
 	
 	assert(msg_get_type(message) == 5);
 	assert(msg_get_mmsi(message) == 211339980);
@@ -85,6 +85,8 @@ static void example_simple() {
 	switch (msg_get_type(bitstring))
 	{
 	case 1:
+	case 2:
+	case 3:
 		std::cout << "message latitude " << msg123_get_latitude(bitstring) << endl;
 		std::cout << "message longitude " << msg123_get_longitude(bitstring) << endl;
 		std::cout << "message cog " << msg123_get_cog(bitstring) << endl;
@@ -119,7 +121,7 @@ static void decode_file(const string& path) {
 	int counter = 0;
 	dec.setCallback([&counter](AISDecoder* decoder) {
 	
-		auto& bitstring = decoder->get_bitstring();
+		auto& bitstring = decoder->getBitstring();
 		std::cout << "message type " << int(msg_get_type(bitstring)) << endl;
 		std::cout << "message mmsi " << msg_get_mmsi(bitstring) << endl;
 		++counter;
